@@ -1,0 +1,19 @@
+package com.fdmgroup.activeviamproject;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import java.util.Arrays;
+import java.util.List;
+
+import org.junit.jupiter.api.Test;
+
+public class VaRCalculatorTest {
+
+	@Test
+	public void testCalculateValueAtRiskForSingleTrade() {
+		VaRCalculator varCalculator = new VaRCalculator(0.95);
+		List<Double> data = Arrays.asList(-7.2,1.5,1.6,-0.6,0.5);
+		double expectedValue = -7.2;
+		assertEquals(expectedValue, varCalculator.calculateVaRForATrade(data), 0.1);
+	}
+}
